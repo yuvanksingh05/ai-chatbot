@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>AI CHATBOT BUILT BY YUVANK SINGH</title>
+    
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Main container for the chatbot application -->
+    <div class="container">
+        
+        <!-- Header section with title and buttons -->
+        <div class="header">
+            <h1>🤖 AI Chatbot</h1>
+            <p class="subtitle">AI CHATBOT BUILT BY YUVANK SINGH</p>
+            
+            <!-- Control buttons in the header -->
+            <div class="header-controls">
+                <!-- Button to clear chat history -->
+                <button id="clearBtn" class="btn btn-danger">
+                    🗑️ Clear Chat
+                </button>
+            </div>
+        </div>
+        
+        <!-- Chat display area where messages appear -->
+        <div class="chat-container" id="chatContainer">
+            <!-- Messages will be dynamically added here by JavaScript -->
+            <!-- Initial welcome message -->
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Welcome to the AI Chatbot! 👋</p>
+                    <small>Hello! I'm here to help you learn about AI, Machine Learning, Python, and Data Science. 
+                    Feel free to ask me any questions!</small>
+                </div>
+                <div class="message-time">Just now</div>
+            </div>
+        </div>
+        
+        <!-- Input section where users type messages -->
+        <div class="input-section">
+            <!-- Input form -->
+            <form id="chatForm" class="chat-form">
+                <!-- Text input for user messages -->
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Type your message here... (Press Enter to send)" 
+                    autocomplete="off"
+                    class="input-field"
+                >
+                
+                <!-- Send button -->
+                <button type="submit" class="btn btn-primary send-btn">
+                    Send ➤
+                </button>
+            </form>
+            
+            <!-- Loading indicator shown while waiting for response -->
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        
+        <!-- Footer with helpful information -->
+        <div class="footer">
+            <p>💡 <strong>Tips:</strong> Ask me about AI, Machine Learning, Python, or Data Science!</p>
+            <p><small>Built with Flask • For Learning Purposes</small></p>
+        </div>
+    </div>
+    
+    <!-- Link to external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
