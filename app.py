@@ -25,18 +25,11 @@ app.config['SESSION_TYPE'] = 'filesystem'
 def generate_chatbot_response(user_message):
     """
     Generate a response from the chatbot based on user input.
-    This is a simple rule-based chatbot for demonstration purposes.
-    For advanced AI, you can integrate with APIs like OpenAI or Hugging Face.
-    
-    Args:
-        user_message (str): The user's input message
-        
-    Returns:
-        str: The chatbot's response message
     """
-    
+
     # Convert message to lowercase for case-insensitive matching
     message_lower = user_message.lower().strip()
+
     
     # Define predefined responses for common queries
 responses = {
