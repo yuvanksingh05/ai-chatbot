@@ -43,9 +43,14 @@ def generate_chatbot_response(user_message):
         'hello': 'Hello! 👋 Welcome to the AI Chatbot. How can I assist you today?',
         'hi': 'Hi there! 👋 What can I help you with?',
         'how are you': 'I\'m doing great, thank you for asking! 😊 How can I help you?',
-        'what is ai': 'AI (Artificial Intelligence) refers to computer systems designed to perform tasks that typically require human intelligence. These include learning, reasoning, and self-correction.',
-        'what is machine learning': 'Machine Learning is a subset of AI where systems learn and improve from experience without being explicitly programmed. It uses algorithms to analyze data and make predictions.',
-        'what is python': 'Python is a versatile, beginner-friendly programming language widely used in web development, data science, and artificial intelligence. It\'s known for its clean syntax and powerful libraries.',
+        if 'ai' in message_lower or 'artificial intelligence' in message_lower:
+    return 'AI (Artificial Intelligence) refers to computer systems designed to perform tasks that typically require human intelligence.'
+
+elif 'machine learning' in message_lower:
+    return 'Machine Learning is a subset of AI that enables systems to learn from data.'
+
+elif 'python' in message_lower:
+    return 'Python is a versatile programming language used in AI, web development, and data science.'
         'help': 'I can help you with questions about AI, Machine Learning, Python, and more! Try asking me about:\n- AI and Machine Learning\n- Python Programming\n- Data Science\n- General questions',
         'bye': 'Goodbye! 👋 It was great chatting with you. Feel free to come back anytime!',
         'goodbye': 'See you later! 👋 Have a wonderful day!',
