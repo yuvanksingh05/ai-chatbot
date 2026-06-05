@@ -43,31 +43,38 @@ def generate_chatbot_response(user_message):
         'hello': 'Hello! 👋 Welcome to the AI Chatbot. How can I assist you today?',
         'hi': 'Hi there! 👋 What can I help you with?',
         'how are you': 'I\'m doing great, thank you for asking! 😊 How can I help you?',
-        if 'ai' in message_lower or 'artificial intelligence' in message_lower:
-    return 'AI (Artificial Intelligence) refers to computer systems designed to perform tasks that typically require human intelligence.'
-
-elif 'machine learning' in message_lower:
-    return 'Machine Learning is a subset of AI that enables systems to learn from data.'
-
-elif 'python' in message_lower:
-    return 'Python is a versatile programming language used in AI, web development, and data science.'
         'help': 'I can help you with questions about AI, Machine Learning, Python, and more! Try asking me about:\n- AI and Machine Learning\n- Python Programming\n- Data Science\n- General questions',
         'bye': 'Goodbye! 👋 It was great chatting with you. Feel free to come back anytime!',
         'goodbye': 'See you later! 👋 Have a wonderful day!',
         'thank you': 'You\'re welcome! 😊 Is there anything else I can help you with?',
         'thanks': 'Happy to help! 😊 Any other questions?',
     }
+# Check for exact matches
+if message_lower in responses:
+    return responses[message_lower]
+
+# AI-related questions
+if 'ai' in message_lower or 'artificial intelligence' in message_lower:
+    return 'AI (Artificial Intelligence) refers to computer systems designed to perform tasks that typically require human intelligence.'
+
+# Machine Learning questions
+if 'machine learning' in message_lower:
+    return 'Machine Learning is a subset of AI that enables systems to learn from data and improve over time.'
+
+# Python questions
+if 'python' in message_lower:
+    return 'Python is a versatile programming language used in AI, web development, automation, and data science.'
     
-    # Check for exact matches first
-    if message_lower in responses:
-        return responses[message_lower]
+# Check for exact matches first
+if message_lower in responses:
+    return responses[message_lower]
     
-    # Check for partial matches
-    for key, response in responses.items():
-        if key in message_lower:
-            return response
+# Check for partial matches
+for key, response in responses.items():
+if key in message_lower:
+    return response
     
-    # Default response if no match is found
+# Default response if no match is found
     return (
         'That\'s an interesting question! 🤔 While I don\'t have a specific response for that yet, '
         'I\'m continuously learning. Try asking me about AI, Machine Learning, Python, or Data Science!'
